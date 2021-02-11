@@ -20,12 +20,12 @@ public class Rational  {
 
     // return the numerator of this Rational
     public long numerator() {
-        return -1;// replace code
+        return this.num;// replace code
     }
 
     // return the denominator of this Rational
     public long denominator() {
-        return -1;//replace code
+        return this.den;//replace code
     }
 
     // return the decimal representation of this Rational
@@ -40,8 +40,8 @@ public class Rational  {
     // for example if num=8 and den=7 print 8/7
     // for example if num=9 and den=1 print 9
     public String toString() { 
-        if (den == 1) return num + "";
-        else          return "" /*fill in the blank*/;
+        if (den == 1) {return num + "";}
+        else {          return num + "/" + den /*fill in the blank*/;}
     }
 
     // return -1 if a<b or  0 if a=b or 1 if a>b 
@@ -101,6 +101,17 @@ public class Rational  {
     public Rational plus(Rational b) {
         Rational a = this;
 
+        long least_common_den = lcm(a.den, b.den);
+        long new_a_num = (a.num*(least_common_den/a.den));
+        long new_b_num = (b.num*(least_common_den/b.den));
+        long sum_num = new_a_num + new_b_num;
+        return new Rational(sum_num, least_common_den);
+
+
+
+
+
+
         // rewrite this code
 
         // steps show with an example
@@ -117,7 +128,7 @@ public class Rational  {
         // add numerators
         // 3/6
 
-        return null;
+        //return null;
     }
 
     // return -a

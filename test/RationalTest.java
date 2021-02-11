@@ -3,8 +3,6 @@ public class RationalTest {
         Rational x, y, z;
 
         // 1/2 + 1/3 = 5/6
-        //hello
-        //new comment
         x = new Rational(1, 2);
         y = new Rational(1, 3);
         z = x.plus(y);
